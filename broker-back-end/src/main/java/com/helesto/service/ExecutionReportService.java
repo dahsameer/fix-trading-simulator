@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import quickfix.FieldNotFound;
 import quickfix.SessionID;
-import quickfix.fix44.ExecutionReport;
+import quickfix.fix42.ExecutionReport;
 
 @ApplicationScoped
 public class ExecutionReportService {

@@ -6,6 +6,7 @@ services:
     image: felipewind/exchange-back-end:1.0
     ports:
       - 8090:8090
+      - 9880:9880
     networks:
       - fix-trading-simulator-net
     depends_on:
@@ -16,7 +17,7 @@ services:
       - QUARKUS_DATASOURCE_PASSWORD=postgres
       - QUICKFIX=[default],
           [session],
-          BeginString=FIX.4.4,
+          BeginString=FIX.4.2,
           SenderCompID=EXEC,
           TargetCompID=BANZAI,
           ConnectionType=acceptor,
@@ -31,7 +32,7 @@ services:
           JdbcLogOutgoingTable=messages_log_outgoing,
           JdbcLogEventTable=event_log,
           JdbcSessionIdDefaultPropertyValue=not_null,
-          AllowedRemoteAddresses=127.0.0.1\,172.0.0.2\,172.0.0.3\,broker-back-end
+          AllowedRemoteAddresses=127.0.0.1\,172.0.0.2\,172.0.0.3\,172.18.0.3\,172.18.0.1\,broker-back-end
 
   broker-back-end:
     container_name: broker-back-end
@@ -48,7 +49,7 @@ services:
       - QUARKUS_DATASOURCE_PASSWORD=postgres
       - QUICKFIX=[default],
           [session],
-          BeginString=FIX.4.4,
+          BeginString=FIX.4.2,
           SenderCompID=BANZAI,
           TargetCompID=EXEC,
           ConnectionType=initiator,

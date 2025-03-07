@@ -29,9 +29,9 @@ import quickfix.field.OrdStatus;
 import quickfix.field.OrderID;
 import quickfix.field.Side;
 import quickfix.field.Symbol;
-import quickfix.fix44.ExecutionReport;
-import quickfix.fix44.NewOrderSingle;
-import quickfix.fix44.OrderCancelRequest;
+import quickfix.fix42.ExecutionReport;
+import quickfix.fix42.NewOrderSingle;
+import quickfix.fix42.OrderCancelRequest;
 
 @ApplicationScoped
 public class ExecutionReportService {

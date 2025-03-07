@@ -19,7 +19,7 @@ services:
       - QUARKUS_DATASOURCE_PASSWORD=postgres
       - QUICKFIX=[default],
           [session],
-          BeginString=FIX.4.4,
+          BeginString=FIX.4.2,
           SenderCompID=EXEC,
           TargetCompID=BANZAI,
           ConnectionType=acceptor,
@@ -54,7 +54,7 @@ services:
       - QUARKUS_DATASOURCE_PASSWORD=postgres
       - QUICKFIX=[default],
           [session],
-          BeginString=FIX.4.4,
+          BeginString=FIX.4.2,
           SenderCompID=BANZAI,
           TargetCompID=EXEC,
           ConnectionType=initiator,

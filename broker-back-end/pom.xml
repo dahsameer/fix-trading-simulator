@@ -38,7 +38,7 @@
     </dependency>
     <dependency>
       <groupId>org.quickfixj</groupId>
-      <artifactId>quickfixj-messages-fix44</artifactId>
+      <artifactId>quickfixj-messages-fix42</artifactId>
       <version>2.3.0</version>
     </dependency>
 

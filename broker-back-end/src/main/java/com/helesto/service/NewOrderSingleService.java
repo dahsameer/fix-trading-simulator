@@ -27,7 +27,7 @@ import quickfix.field.Side;
 import quickfix.field.Symbol;
 import quickfix.field.TimeInForce;
 import quickfix.field.TransactTime;
-import quickfix.fix44.NewOrderSingle;
+import quickfix.fix42.NewOrderSingle;
 
 @RequestScoped
 public class NewOrderSingleService {
@@ -53,6 +53,7 @@ public class NewOrderSingleService {
 		} else {
 			newOrderSingle.set(new Side(Side.SELL));
 		}
+		newOrderSingle.set(new HandlInst(HandlInst.AUTOMATED_EXECUTION_PRIVATE));
 
 		// Tag 60 TransactTime
 		newOrderSingle.set(new TransactTime(LocalDateTime.now()));
@@ -73,7 +74,7 @@ public class NewOrderSingleService {
 		newOrderSingle.set(new Price(request.getPrice()));
 
 		// Tag 1 Account
-		newOrderSingle.setField(new Account("1"));
+		newOrderSingle.setField(new Account("100"));
 
 		// Tag 22 SecurityIDSource
 		newOrderSingle.setField(new SecurityIDSource(SecurityIDSource.EXCHANGE_SYMBOL));

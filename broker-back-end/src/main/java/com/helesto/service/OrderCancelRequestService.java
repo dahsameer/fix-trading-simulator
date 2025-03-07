@@ -23,7 +23,7 @@ import quickfix.field.OrigClOrdID;
 import quickfix.field.Side;
 import quickfix.field.Symbol;
 import quickfix.field.TransactTime;
-import quickfix.fix44.OrderCancelRequest;
+import quickfix.fix42.OrderCancelRequest;
 
 @RequestScoped
 public class OrderCancelRequestService {

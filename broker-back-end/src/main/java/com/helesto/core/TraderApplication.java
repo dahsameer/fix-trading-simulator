@@ -70,7 +70,9 @@ public class TraderApplication extends MessageCracker implements Application {
 
 	@Override
 	public void toApp(Message message, SessionID sessionID) throws DoNotSend {
-		LOG.info("toApp");
+		LOG.info("toApp : aap");
+		LOG.info("=============================================================================: ");
+		LOG.info("message: " + message);
 	}
 
 	@Override
@@ -110,9 +112,9 @@ public class TraderApplication extends MessageCracker implements Application {
 		LogUtil.logThrowable(MessageUtils.getSessionID(message), e.getMessage(), e);
 	}
 
-	public void onMessage(quickfix.fix44.ExecutionReport executionReport, SessionID sessionID)
+	public void onMessage(quickfix.fix42.ExecutionReport executionReport, SessionID sessionID)
 			throws FieldNotFound, IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType {
-		LOG.info("onMessage quickfix.fix44.ExecutionReport");
+		LOG.info("onMessage quickfix.fix42.ExecutionReport");
 		executionReportService.executionReport(executionReport, sessionID);
 
 	}

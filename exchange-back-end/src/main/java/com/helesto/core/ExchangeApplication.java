@@ -60,6 +60,8 @@ public class ExchangeApplication extends MessageCracker implements Application {
 	@Override
 	public void toApp(Message message, SessionID sessionID) throws DoNotSend {
 		LOG.info("toApp");
+		LOG.info("=============================================================================: ");
+		LOG.info("message: " + message);
 	}
 
 	@Override
@@ -69,15 +71,15 @@ public class ExchangeApplication extends MessageCracker implements Application {
 		crack(message, sessionID);
 	}
 
-	public void onMessage(quickfix.fix44.NewOrderSingle newOrderSingle, SessionID sessionID)
+	public void onMessage(quickfix.fix42.NewOrderSingle newOrderSingle, SessionID sessionID)
 			throws FieldNotFound, IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType {
-		LOG.info("onMessage quickfix.fix44.NewOrderSingle");
+		LOG.info("onMessage quickfix.fix42.NewOrderSingle");
 		executionReportService.executionReport(newOrderSingle, sessionID);
 	}
 
-	public void onMessage(quickfix.fix44.OrderCancelRequest orderCancelRequest, SessionID sessionID)
+	public void onMessage(quickfix.fix42.OrderCancelRequest orderCancelRequest, SessionID sessionID)
 			throws FieldNotFound, IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType {
-		LOG.info("onMessage quickfix.fix44.OrderCancelRequest");
+		LOG.info("onMessage quickfix.fix42.OrderCancelRequest");
 		executionReportService.executionReport(orderCancelRequest, sessionID);
 	}
 
